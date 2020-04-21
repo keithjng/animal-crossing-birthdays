@@ -2,7 +2,7 @@
   "name": "animal-crossing-birthdays",
   "version": "1.0.0",
   "description": "Webpage that allows users to match with their Animal Crossing birthday buddy!",
-  "main": "scripts.js",
+  "main": "index.php",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
