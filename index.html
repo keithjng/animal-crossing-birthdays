@@ -12,7 +12,7 @@
   <h1>
     Animal Crossing Birthday Search!
   </h1>
-  <form id="search" action="/action_page.php">
+  <form id="search" onsumbit="getData()">
     <label for="bmonth">Birth Month</label><br>
     <input type="number" id="bmonth" name="bmonth" value="1" min="1" max="12"><br>
     <label for="bday">Birth Day</label><br>
@@ -23,6 +23,7 @@
   <script>
     function getDate() {
       document.getElementById("search").submit();
+      console.log("search")
     }
   </script>
 

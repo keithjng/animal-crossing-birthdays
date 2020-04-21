@@ -1,0 +1,26 @@
+{
+  "name": "animal-crossing-birthdays",
+  "version": "1.0.0",
+  "description": "Webpage that allows users to match with their Animal Crossing birthday buddy!",
+  "main": "scripts.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "heroku"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keithjng/animal-crossing-birthdays.git"
+  },
+  "author": "Keith Ng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keithjng/animal-crossing-birthdays/issues"
+  },
+  "homepage": "https://github.com/keithjng/animal-crossing-birthdays#readme"
+}
