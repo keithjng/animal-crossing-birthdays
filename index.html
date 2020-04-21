@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animal Crossing</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+  <h1>
+    Animal Crossing Birthday Search!
+  </h1>
+  <form id="search" action="/action_page.php">
+    <label for="bmonth">Birth Month</label><br>
+    <input type="number" id="bmonth" name="bmonth" value="1" min="1" max="12"><br>
+    <label for="bday">Birth Day</label><br>
+    <input type="number" id="bday" name="bday" value="1" min="1" max="31"><br><br>
+    <input type="submit" value="Submit" class="submit">
+  </form>
+
+  <script>
+    function getDate() {
+      document.getElementById("search").submit();
+    }
+  </script>
+
+</body>
+</HTML>
