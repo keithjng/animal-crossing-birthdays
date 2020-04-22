@@ -1,34 +1,22 @@
-window.addEventListener( "load", function () {
-  function sendData() {
-    const XHR = new XMLHttpRequest();
+window.onload = init;
 
-    // Bind the FormData object and the form element
-    const FD = new FormData( form );
+function init() {
+    charSearch();
+}
 
-    // Define what happens on successful data submission
-    XHR.addEventListener( "load", function(event) {
-      alert( event.target.responseText );
-    } );
-
-    // Define what happens in case of error
-    XHR.addEventListener( "error", function( event ) {
-      alert( 'Oops! Something went wrong.' );
-    } );
-
-    // Set up our request
-    XHR.open( "POST", "https://example.com/cors.php" );
-
-    // The data sent is what the user provided in the form
-    XHR.send( FD );
-  }
-
-  // Access the form element...
-  const form = document.getElementById( "myForm" );
-
-  // ...and take over its submit event.
-  form.addEventListener( "submit", function ( event ) {
-    event.preventDefault();
-
-    sendData();
-  } );
-} );
+function charSearch() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "db.json");
+    request.onreadystatechange = function() {
+        var div = document.getElementById("character");
+        if (this.readyState == this.DONE && this.status == 200) {
+            if (this.responseText != null) {
+                div.innerHTML = this.responseText;
+            }
+            else {
+                div.innerHTML = "Error: no data";
+            }
+        }
+    };
+    request.send();
+}

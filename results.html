@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animal Crossing</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="favicon.ico" rel="icon" type="image/x-icon" />
+  <script src="scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+  <h1>
+    Animal Crossing Birthday Search!
+  </h1>
+  <h2>
+    This is who your birthday buddy is:
+  </h2>
+
+  <script>
+    var url='db.json';
+  </script>
+
+  <div id="character"></div>
+
+  <script id="tpl" type="text/template">
+    {{#villagers}}
+      <div><img src="{{image}}">{{name}}<div>
+    {{/villagers}}
+  </script>
+
+  <script>
+    var slingshot = function (url, tplId, character) {
+     $.getJSON(url, function(data) {
+              var template = $(tplId).html();
+              var stone = Handlebars.compile(template)(data);
+              $(character).append(stone);
+     });
+    }
+    slingshot('db.json', '#tpl', '#character');
+  </script>
+
+</body>
+</HTML>
