@@ -27,7 +27,9 @@
 
   <script id="tpl" type="text/template">
     {{#villagers}}
-      <div><img src="{{image}}">{{name}}<div>
+      {{#Filbert}}
+      <div><img src="{{image}}">{{name}} and {{personality}}<div>
+      {{/Filbert}}
     {{/villagers}}
   </script>
 
