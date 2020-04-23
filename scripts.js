@@ -1,22 +1,9 @@
-window.onload = init;
+$(document).ready(function(){
+    var villagerTemplate = $("#villager-template").html();
 
-function init() {
-    charSearch();
-}
+    var compiledVillagers = Handlebars.compile(villagerTemplate);
 
-function charSearch() {
-    var request = new XMLHttpRequest();
-    request.open("GET", "db.json");
-    request.onreadystatechange = function() {
-        var div = document.getElementById("character");
-        if (this.readyState == this.DONE && this.status == 200) {
-            if (this.responseText != null) {
-                div.innerHTML = this.responseText;
-            }
-            else {
-                div.innerHTML = "Error: no data";
-            }
-        }
-    };
-    request.send();
-}
+    $.ajax("./db.json").done(function(villager) {
+        $(".villager-container").html(compiledVillagers(villager));
+    });
+});

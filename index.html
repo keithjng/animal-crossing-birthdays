@@ -7,14 +7,16 @@
   <title>Animal Crossing</title>
   <link rel="stylesheet" href="main.css">
   <link href="favicon.ico" rel="icon" type="image/x-icon" />
-  <script src="scripts.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="scripts.js"></script>
 </head>
 <body>
-  <h1>
+  <div class="inline"><a href="/index.html"><img src="https://i.ibb.co/zQzCZJP/birthday-search-logo.png" alt="logo" class="logo" height="200" width="160"></a></div>
+  <div class="inline"><h1>
     Animal Crossing Birthday Search!
-  </h1>
+  </h1></div>
+  <br class="clearBoth"/>
   <form id="search" method="GET" action="/results.html">
     <label for="bmonth">Birth Month</label><br>
     <input type="number" id="bmonth" name="bmonth" value="1" min="1" max="12"><br>
