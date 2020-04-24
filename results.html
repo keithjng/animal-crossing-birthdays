@@ -9,7 +9,6 @@
   <link href="favicon.ico" rel="icon" type="image/x-icon" />
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script src="scripts.js"></script>
 </head>
 <body>
   <div class="inline"><a href="/index.html"><img src="https://i.ibb.co/zQzCZJP/birthday-search-logo.png" alt="logo" class="logo" height="200" width="160"></a></div>
@@ -21,33 +20,20 @@
     This is who your birthday buddy is:
   </h2>
 
-  <!-- <script>
-    var url='db.json';
-  </script> -->
-
   <ul class="villager-container"></ul>
 
   <script id="villager-template" type="text/x-handlebars-template">
-      {{#each villagers}}
       <img src="{{image}}">
       <h2>{{name}}</h2>
-      <p>Personality: {{personality}}</p>
-      <p>Species: {{species}}</p>
-      <p>Favorite Color: {{favcolor}}</p>
+      <pre>
+      <div class="facts"><p>Personality:          {{personality}}</p></div>
+      <div class="facts"><p>Animal Species:     {{species}}</p></div>
+      <div class="facts"><p>Catch Phrase:       "{{phrase}}"</p></div>
+      <div class="facts"><p>Favorite Color:     {{favcolor}}</p></div>
+      </pre>
       <p><a href="{{link}}">Link to Wiki</a></p>
-      {{/each}}
   </script>
-
-<!--   <script>
-    var slingshot = function (url, tplId, character) {
-     $.getJSON(url, function(data) {
-              var template = $(tplId).html();
-              var stone = Handlebars.compile(template)(data);
-              $(character).append(stone);
-     });
-    }
-    slingshot('db.json', '#tpl', '#character');
-  </script> -->
+  <script src="handlebars.js"></script>
 
 </body>
 </HTML>

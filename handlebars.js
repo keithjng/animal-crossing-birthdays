@@ -1,4 +1,17 @@
-{
+$(document).ready(function(){
+
+  var j = localStorage.getItem("localStor");
+
+  var k = parseInt(j);
+
+  var villagerTemplate = $("#villager-template").html();
+
+  var compiledVillagers = Handlebars.compile(villagerTemplate);
+
+      $(".villager-container").html(compiledVillagers(db.villagers[k]));
+});
+
+var db = {
   "villagers": [
     {
       "message": "Here's some information on Ace:",
