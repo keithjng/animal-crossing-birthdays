@@ -17,12 +17,24 @@
     Animal Crossing Birthday Search!
   </h1></div>
   <br class="clearBoth"/>
+  <script>
+    function getData() {
+      var form = document.getElementById("search");
+      let month = form.elements[0].value;
+      let day = form.elements[1].value;
+      villagerSearch(month, day);
+    }
+  </script>
   <form id="search" method="GET" action="/results.html">
+    <div class="num">
     <label for="bmonth">Birth Month</label><br>
     <input type="number" id="bmonth" name="bmonth" value="1" min="1" max="12"><br>
+    </div>
+    <div class="num">
     <label for="bday">Birth Day</label><br>
     <input type="number" id="bday" name="bday" value="1" min="1" max="31"><br><br>
-    <input type="submit" value="Submit" class="submit">
+    </div>
+    <input type="submit" value="Submit" class="submit" onclick="getData()">
   </form>
 
 </body>
