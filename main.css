@@ -16,7 +16,7 @@
 body {
   font-family: 'FinkHeavy';
   background-color: rgba(180, 180, 180, 0.4);
-  background-image: url('https://i.ibb.co/23hSLkv/animal-Crossing-Background.jpg');
+  background-image: url('./animalCrossingBackground.jpg');
 }
 
 h1 {
